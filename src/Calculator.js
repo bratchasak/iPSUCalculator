@@ -81,7 +81,14 @@ export default class Calculator extends React.Component {
 	}
 
 	render() {
-		const { variable1 } = this.state;		
+		const { variable1, variable2 } = this.state;
+		let textResult;
+
+		if (variable2) {
+			textResult = variable2;
+		} else {
+			textResult = variable1;
+		}	
 
 		return (			
 			<View style={styles.body}>
