@@ -41,6 +41,10 @@ export default class Calculator extends React.Component {
 	}
 
 	_handlePressOperator(operator) {
+		const { variable2 } = this.state;
+		if (variable2) {
+			this.calculate();
+		}
 		this.setState({ operator });
 	}
 
