@@ -60,24 +60,23 @@ export default class Calculator extends React.Component {
 		const { variable1, variable2, operator } = this.state;		
 		let result;
 
-			switch (operator) {
-				case '+':
-					result = variable1 + Number(variable2);
-				break;
-				case '-':
-					result = variable1 - Number(variable2);
-				break;
-				case '*':
-					result = variable1 * Number(variable2);
-				break;
-				case '/':
-					result = variable1 / Number(variable2);
-				break;
-				default:
-					return;
-			}
-			this.setState({ variable1: result });
-		
+		switch (operator) {
+			case '+':
+				result = variable1 + Number(variable2);
+			break;
+			case '-':
+				result = variable1 - Number(variable2);
+			break;
+			case '*':
+				result = variable1 * Number(variable2);
+			break;
+			case '/':
+				result = variable1 / Number(variable2);
+			break;
+			default:
+				return;
+		}
+		this.setState({ variable1: result, variable2: '' });		
 	}
 
 	render() {
@@ -93,7 +92,7 @@ export default class Calculator extends React.Component {
 		return (			
 			<View style={styles.body}>
 				<View style={styles.panelLabel}>
-					<Text style={styles.labelResult}>{_.round(variable1, 2).toString()}</Text>
+					<Text style={styles.labelResult}>{_.round(textResult, 2).toString()}</Text>
 				</View>
 				<View style={styles.rowButton}>
 					<View style={styles.colButton}>
