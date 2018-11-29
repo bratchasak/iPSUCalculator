@@ -196,8 +196,7 @@ export default class Calculator extends React.Component {
 
 const styles = StyleSheet.create({	
 	body: {
-		backgroundColor: '#ecf0f1',
-		height: 280,
+		backgroundColor: '#dfe6e9',
 		width: '100%',
 		paddingTop: 15,
 		paddingBottom: 15,
@@ -212,14 +211,10 @@ const styles = StyleSheet.create({
 		padding: 7,
 		textAlign: 'right'
 	},
-	rowButton: {
-		flex: 1,
-		flexDirection: 'row',
-		height: '33%',
-		paddingTop: 10,
-		paddingBottom: 10,		
+	row: {
+		flexDirection: 'row'
 	},
-	colButton: {
+	col: {
 		flex: 1,
 		padding: 5
 	},
