@@ -2,10 +2,10 @@ import React from 'react';
 import {
 	StyleSheet,
 	View,
+	TouchableHighlight,
 	Text
 } from 'react-native';
 import _ from 'lodash';
-import ButtonInput from './ButtonInput';
 
 const initialStates = {
 	operator: '',
@@ -97,59 +97,96 @@ export default class Calculator extends React.Component {
 					</View>
 				</View>
 				<View style={styles.row}>
-					<View style={styles.col}>						
-						<ButtonInput text="1" onPress={() => this._handlePressNumber(1)} />
+					<View style={styles.col}>
+						<TouchableHighlight style={styles.buttonInput} onPress={() => this._handlePressNumber(1)}>
+							<Text style={styles.buttonText}>1</Text>
+						</TouchableHighlight>
 					</View>
 					<View style={styles.col}>
-						<ButtonInput text="2" onPress={() => this._handlePressNumber(2)} />
+						<TouchableHighlight style={styles.buttonInput} onPress={() => this._handlePressNumber(2)}>
+							<Text style={styles.buttonText}>2</Text>
+						</TouchableHighlight>
 					</View>
 					<View style={styles.col}>
-						<ButtonInput text="3" onPress={() => this._handlePressNumber(3)} />
+						<TouchableHighlight style={styles.buttonInput} onPress={() => this._handlePressNumber(3)}>
+							<Text style={styles.buttonText}>3</Text>
+						</TouchableHighlight>
 					</View>
 					<View style={styles.col}>
-						<ButtonInput text="4" onPress={() => this._handlePressNumber(4)} />
+						<TouchableHighlight style={styles.buttonInput} onPress={() => this._handlePressNumber(4)}>
+							<Text style={styles.buttonText}>4</Text>
+						</TouchableHighlight>
 					</View>
 					<View style={styles.col}>
-						<ButtonInput text="5" onPress={() => this._handlePressNumber(5)} />
+						<TouchableHighlight style={styles.buttonInput} onPress={() => this._handlePressNumber(5)}>
+							<Text style={styles.buttonText}>5</Text>
+						</TouchableHighlight>
 					</View>
 				</View>	
 				<View style={styles.row}>
 					<View style={styles.col}>
-						<ButtonInput text="6" onPress={() => this._handlePressNumber(6)} />
+						<TouchableHighlight style={styles.buttonInput} onPress={() => this._handlePressNumber(6)}>
+							<Text style={styles.buttonText}>6</Text>
+						</TouchableHighlight>
 					</View>
 					<View style={styles.col}>
-						<ButtonInput text="7" onPress={() => this._handlePressNumber(7)} />
+						<TouchableHighlight style={styles.buttonInput} onPress={() => this._handlePressNumber(7)}>
+							<Text style={styles.buttonText}>7</Text>
+						</TouchableHighlight>
 					</View>
 					<View style={styles.col}>
-						<ButtonInput text="8" onPress={() => this._handlePressNumber(8)} />
+						<TouchableHighlight style={styles.buttonInput} onPress={() => this._handlePressNumber(8)}>
+							<Text style={styles.buttonText}>8</Text>
+						</TouchableHighlight>
 					</View>
 					<View style={styles.col}>
-						<ButtonInput text="9" onPress={() => this._handlePressNumber(9)} />
+						<TouchableHighlight style={styles.buttonInput} onPress={() => this._handlePressNumber(9)}>
+							<Text style={styles.buttonText}>9</Text>
+						</TouchableHighlight>
 					</View>
 					<View style={styles.col}>
-						<ButtonInput text="0" onPress={() => this._handlePressNumber(0)} />
-					</View>
-				</View>	
-				<View style={styles.row}>
-					<View style={styles.col}>						
-						<ButtonInput text="+" onPress={() => this._handlePressOperator('+')} />
-					</View>
-					<View style={styles.col}>
-						<ButtonInput text="-" onPress={() => this._handlePressOperator('-')} />
-					</View>
-					<View style={styles.col}>
-						<ButtonInput text="x" onPress={() => this._handlePressOperator('*')} />
-					</View>
-					<View style={styles.col}>
-						<ButtonInput text="/" onPress={() => this._handlePressOperator('/')} />
+						<TouchableHighlight style={styles.buttonInput} onPress={() => this._handlePressNumber(0)}>
+							<Text style={styles.buttonText}>0</Text>
+						</TouchableHighlight>
 					</View>
 				</View>	
 				<View style={styles.row}>
 					<View style={styles.col}>
-						<ButtonInput text="AC" backgroundColor="#f39c12" textColor="#FFFFFF" onPress={() => this._handlePressClear()} />
+						<TouchableHighlight style={styles.buttonInput} onPress={() => this._handlePressOperator('+')}>
+							<Text style={styles.buttonText}>+</Text>
+						</TouchableHighlight>
 					</View>
 					<View style={styles.col}>
-						<ButtonInput text="=" onPress={() => this._handlePressResult()} />
+						<TouchableHighlight style={styles.buttonInput} onPress={() => this._handlePressOperator('-')}>
+							<Text style={styles.buttonText}>-</Text>
+						</TouchableHighlight>
+					</View>
+					<View style={styles.col}>
+						<TouchableHighlight style={styles.buttonInput} onPress={() => this._handlePressOperator('*')}>
+							<Text style={styles.buttonText}>x</Text>
+						</TouchableHighlight>
+					</View>
+					<View style={styles.col}>
+						<TouchableHighlight style={styles.buttonInput} onPress={() => this._handlePressOperator('/')}>
+							<Text style={styles.buttonText}>/</Text>
+						</TouchableHighlight>
+					</View>
+					<View style={styles.col}>
+						<TouchableHighlight style={styles.buttonInput}>
+							<Text style={styles.buttonText}>5</Text>
+						</TouchableHighlight>
+					</View>
+				</View>	
+				<View style={styles.row}>
+					<View style={styles.col}>
+						<TouchableHighlight style={styles.buttonInput} onPress={() => this._handlePressClear()}>
+							<Text style={styles.buttonText}>AC</Text>
+						</TouchableHighlight>
+					</View>
+					<View style={styles.col}>
+						<TouchableHighlight style={styles.buttonInput} onPress={() => this._handlePressResult()}>
+							<Text style={styles.buttonText}>=</Text>
+						</TouchableHighlight>
 					</View>
 				</View>				
 			</View>
@@ -180,5 +217,17 @@ const styles = StyleSheet.create({
 	col: {
 		flex: 1,
 		padding: 5
+	},
+	buttonInput: {
+		backgroundColor: '#b2bec3',
+		alignItems: 'center',
+		justifyContent: 'center',
+		paddingTop: 8,
+		paddingBottom: 8
+	},
+	buttonText: {
+		color: '#636e72',
+		fontWeight: '400',
+		fontSize: 16
 	}
 })
